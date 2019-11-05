@@ -1,0 +1,74 @@
+﻿@model SiparisYonetimSistemi.Models.Siparis
+
+@{
+    ViewBag.Title = "Detay";
+}
+
+<h2>Detay</h2>
+
+<div>
+    <h4>Siparis</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MusteriId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MusteriId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ToplamTutar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToplamTutar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KayitZamani)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KayitZamani)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SiparisDetayId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SiparisDetayId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirimFiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirimFiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Toplam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Toplam)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Duzenle", new { id = Model.SiparisId }) |
+    @Html.ActionLink("Sipariş Listesi", "Index")
+</p>

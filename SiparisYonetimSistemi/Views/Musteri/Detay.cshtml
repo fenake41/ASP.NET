@@ -1,0 +1,51 @@
+﻿@model SiparisYonetimSistemi.Models.Musteri
+
+@{
+    ViewBag.Title = "Detay";
+}
+
+<h2>Detay</h2>
+<hr />
+<table class="table">
+    <tr>
+        <td></td>
+        <th>@Html.DisplayNameFor(model => model.MusteriAdi)</th>
+        <td>@Html.DisplayFor(model => model.MusteriAdi)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <th>@Html.DisplayNameFor(model => model.MusteriSoyadi)</th>
+        <td>@Html.DisplayFor(model => model.MusteriSoyadi)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <th>@Html.DisplayNameFor(model => model.MusteriId)</th>
+        <td>@Html.DisplayFor(model => model.MusteriId)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <th>@Html.DisplayNameFor(model => model.IlId)</th>
+        <td>@Html.DisplayFor(model => model.IlId)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <th>@Html.DisplayNameFor(model => model.IlceId)</th>
+        <td>@Html.DisplayFor(model => model.IlceId)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <th>@Html.DisplayNameFor(model => model.Adres)</th>
+        <td>@Html.DisplayFor(model => model.Adres)</td>
+    </tr>
+   
+</table>
+
+
+
+
+
+
+<p>
+    @Html.ActionLink("Düzenle", "Duzenle", new {  id = Model.MusteriId  }) |
+    @Html.ActionLink("Listeye Dön", "Index")
+</p>

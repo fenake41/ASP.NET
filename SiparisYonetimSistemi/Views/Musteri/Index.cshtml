@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SiparisYonetimSistemi.Models.Musteri>
+
+@{
+    ViewBag.Title = "Müşteri Listesi";
+}
+
+<h2>Müşteri Listesi</h2>
+
+<p>
+    @Html.ActionLink("Yeni Müşteri", "Kaydet")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MusteriAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MusteriSoyadi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IlId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IlceId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adres)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MusteriAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MusteriSoyadi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IlId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IlceId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adres)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Duzenle", new {  id=item.MusteriId  }) |
+            @Html.ActionLink("Detay", "Detay", new {  id=item.MusteriId  }) |
+            @Html.ActionLink("Sil", "Sil", new {  id=item.MusteriId })
+        </td>
+    </tr>
+}
+
+</table>

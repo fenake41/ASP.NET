@@ -1,0 +1,64 @@
+﻿@model SiparisYonetimSistemi.Models.Urun
+
+@{
+    ViewBag.Title = "Sil";
+}
+
+<h2>Sil</h2>
+
+<h3>Bu ürünü silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Urun</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlisFiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlisFiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SatisFiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SatisFiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunDurum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunDurum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Listeye Dön", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,90 @@
+﻿@model SiparisYonetimSistemi.Models.Musteri
+
+@{
+    ViewBag.Title = "Müşteri Kaydet";
+}
+
+<h2>Kaydet</h2>
+
+<style>
+    .validation-summary-errors ul {
+        list-style-type: none;
+    }
+
+    .input-validation-error {
+        border-color: red;
+        border-width: 1px
+    }
+
+    .field-validation-error {
+        background-color: red;
+        color: white;
+    }
+</style>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Musteri</h4>
+    <hr />
+    @Html.ValidationSummary(false, "", new { @class = "text-danger alert alert-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MusteriId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MusteriId, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MusteriId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MusteriAdi, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MusteriAdi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MusteriAdi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MusteriSoyadi, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MusteriSoyadi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MusteriSoyadi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IlId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div>@Html.DropDownListFor(Model => Model.IlId, new SelectList(ViewBag.Il, "IlId", "IlAdi"), new { @class = "form-control" })</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IlceId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div>@Html.DropDownListFor(model => model.IlceId, new SelectList(ViewBag.Ilce, "IlceId", "IlceAdi"), new { @class = "form-control" })</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Adres, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Adres, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Adres, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Müşteri Listesi", "Index")
+</div>

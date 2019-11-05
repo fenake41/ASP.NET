@@ -1,0 +1,64 @@
+﻿@model SiparisYonetimSistemi.Models.Musteri
+
+@{
+    ViewBag.Title = "Sil";
+}
+
+<h2>Sil</h2>
+
+<h3>Bu müşteriyi silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Musteri</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MusteriAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MusteriAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MusteriSoyadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MusteriSoyadi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IlId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IlId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IlceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IlceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Müşteri Listesi", "Index")
+        </div>
+    }
+</div>
